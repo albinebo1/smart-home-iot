@@ -39,3 +39,12 @@ services:
       - mqtt
       - influxdb
     restart: unless-stopped
+
+  backend:
+    build: ./backend
+    container_name: smart-home-backend
+    ports:
+      - "8000:8000"
+    depends_on:
+      - mqtt
+      - influxdb
