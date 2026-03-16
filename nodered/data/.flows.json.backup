@@ -1,0 +1,3331 @@
+[
+    {
+        "id": "4f4869a9266855d4",
+        "type": "tab",
+        "label": "Ingestion & Storage",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "49e1284654ecb233",
+        "type": "tab",
+        "label": "Dashboard (Sensors)",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "9539bcdd3d66373d",
+        "type": "tab",
+        "label": "Actuators & Manual Control",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "eb4fff834c698462",
+        "type": "tab",
+        "label": "Automation (Static + AI Bridge)",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "bf00a1908d24bbf2",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "mqtt-broker",
+        "port": 1883,
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "98feec88edb1a54b",
+        "type": "influxdb",
+        "hostname": "127.0.0.1",
+        "port": 8086,
+        "protocol": "http",
+        "database": "database",
+        "name": "InfluxDB Smart Home",
+        "usetls": false,
+        "tls": "",
+        "influxdbVersion": "2.0",
+        "url": "http://influxdb:8086",
+        "timeout": 10,
+        "rejectUnauthorized": true
+    },
+    {
+        "id": "11b74163be24d6d7",
+        "type": "ui-base",
+        "name": "My Dashboard",
+        "path": "/dashboard",
+        "appIcon": "",
+        "includeClientData": true,
+        "acceptsClientConfig": [
+            "ui-notification",
+            "ui-control"
+        ],
+        "showPathInSidebar": false,
+        "headerContent": "page",
+        "navigationStyle": "default",
+        "titleBarStyle": "default",
+        "showReconnectNotification": true,
+        "notificationDisplayTime": 1,
+        "showDisconnectNotification": true,
+        "allowInstall": false
+    },
+    {
+        "id": "678c4bb469439776",
+        "type": "ui-theme",
+        "name": "Default Theme",
+        "colors": {
+            "surface": "#ffffff",
+            "primary": "#0094CE",
+            "bgPage": "#eeeeee",
+            "groupBg": "#ffffff",
+            "groupOutline": "#cccccc"
+        },
+        "sizes": {
+            "density": "default",
+            "pagePadding": "12px",
+            "groupGap": "12px",
+            "groupBorderRadius": "4px",
+            "widgetGap": "12px"
+        }
+    },
+    {
+        "id": "283088c8eb7b8163",
+        "type": "ui-page",
+        "name": "Living Room",
+        "ui": "11b74163be24d6d7",
+        "path": "/page1",
+        "icon": "home",
+        "layout": "grid",
+        "theme": "678c4bb469439776",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 6,
+        "className": "",
+        "visible": true,
+        "disabled": false
+    },
+    {
+        "id": "b2fcc6ca7856b28c",
+        "type": "ui-group",
+        "name": "Sensors",
+        "page": "283088c8eb7b8163",
+        "width": 6,
+        "height": 1,
+        "order": 3,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "983c57095835e884",
+        "type": "ui-group",
+        "name": "Controls",
+        "page": "283088c8eb7b8163",
+        "width": 6,
+        "height": 1,
+        "order": 2,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "9c941b3a93342b57",
+        "type": "ui-page",
+        "name": "Bedroom",
+        "ui": "11b74163be24d6d7",
+        "path": "/page2",
+        "icon": "bed",
+        "layout": "grid",
+        "theme": "678c4bb469439776",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 5,
+        "className": "",
+        "visible": true,
+        "disabled": false
+    },
+    {
+        "id": "f13ffa804629e55b",
+        "type": "ui-group",
+        "name": "Sensors",
+        "page": "9c941b3a93342b57",
+        "width": 6,
+        "height": 1,
+        "order": 3,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "acb610a2ebe366e0",
+        "type": "ui-group",
+        "name": "Controls",
+        "page": "9c941b3a93342b57",
+        "width": 6,
+        "height": 1,
+        "order": 2,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "9e85b5be2a100bdc",
+        "type": "ui-group",
+        "name": "States",
+        "page": "9c941b3a93342b57",
+        "width": 6,
+        "height": 1,
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "1c435048d13de7f9",
+        "type": "ui-page",
+        "name": "Kitchen",
+        "ui": "11b74163be24d6d7",
+        "path": "/page3",
+        "icon": "home",
+        "layout": "grid",
+        "theme": "678c4bb469439776",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 4,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "f30d555d5228d7be",
+        "type": "ui-group",
+        "name": "Sensors",
+        "page": "1c435048d13de7f9",
+        "width": 6,
+        "height": 1,
+        "order": 3,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "2302791229a238fa",
+        "type": "ui-group",
+        "name": "Controls",
+        "page": "1c435048d13de7f9",
+        "width": 6,
+        "height": 1,
+        "order": 2,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "3c7aaaf7b51fdde4",
+        "type": "ui-page",
+        "name": "Bathroom",
+        "ui": "11b74163be24d6d7",
+        "path": "/page4",
+        "icon": "home",
+        "layout": "grid",
+        "theme": "678c4bb469439776",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 3,
+        "className": "",
+        "visible": true,
+        "disabled": false
+    },
+    {
+        "id": "54756c4ba4a87dae",
+        "type": "ui-group",
+        "name": "Sensors",
+        "page": "3c7aaaf7b51fdde4",
+        "width": 6,
+        "height": 1,
+        "order": 3,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "15019fe95800837d",
+        "type": "ui-page",
+        "name": "Hallway",
+        "ui": "11b74163be24d6d7",
+        "path": "/page5",
+        "icon": "home",
+        "layout": "grid",
+        "theme": "678c4bb469439776",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 2,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "34dc53797af264e6",
+        "type": "ui-group",
+        "name": "Sensors ",
+        "page": "15019fe95800837d",
+        "width": 6,
+        "height": 1,
+        "order": 3,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "e6e8f63ddaee0d56",
+        "type": "ui-group",
+        "name": "Controls",
+        "page": "15019fe95800837d",
+        "width": 6,
+        "height": 1,
+        "order": 2,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "e9306beb6c70c3f3",
+        "type": "ui-group",
+        "name": "States",
+        "page": "1c435048d13de7f9",
+        "width": 6,
+        "height": 1,
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "0c3f44be9fcb3c2e",
+        "type": "ui-group",
+        "name": "States",
+        "page": "3c7aaaf7b51fdde4",
+        "width": 6,
+        "height": 1,
+        "order": 2,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "48546018f818ab44",
+        "type": "ui-group",
+        "name": "States",
+        "page": "15019fe95800837d",
+        "width": 6,
+        "height": 1,
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "51c7fac4f42cb161",
+        "type": "ui-group",
+        "name": "States",
+        "page": "283088c8eb7b8163",
+        "width": 6,
+        "height": 1,
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "010bfa593d293c11",
+        "type": "ui-group",
+        "name": "Controls",
+        "page": "3c7aaaf7b51fdde4",
+        "width": 6,
+        "height": 1,
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "5e9dcc9c8418a389",
+        "type": "ui-page",
+        "name": "System",
+        "ui": "11b74163be24d6d7",
+        "path": "/page6",
+        "icon": "home",
+        "layout": "grid",
+        "theme": "678c4bb469439776",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 1,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "69e350d71e0c77c2",
+        "type": "ui-group",
+        "name": "Mode selector",
+        "page": "5e9dcc9c8418a389",
+        "width": 6,
+        "height": 1,
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "c2bf94e8e5774fb8",
+        "type": "mqtt in",
+        "z": "4f4869a9266855d4",
+        "name": "MQTT IN - sensors wildcard",
+        "topic": "home/+/sensor/+",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "bf00a1908d24bbf2",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 140,
+        "y": 200,
+        "wires": [
+            [
+                "3c98911ac632736b",
+                "207e3bdf99750a55"
+            ]
+        ]
+    },
+    {
+        "id": "3c98911ac632736b",
+        "type": "json",
+        "z": "4f4869a9266855d4",
+        "name": "",
+        "property": "payload",
+        "action": "obj",
+        "pretty": false,
+        "x": 310,
+        "y": 300,
+        "wires": [
+            [
+                "2cbef0e25c7af134"
+            ]
+        ]
+    },
+    {
+        "id": "e1d1212f179d5931",
+        "type": "debug",
+        "z": "4f4869a9266855d4",
+        "name": "debug 1",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 800,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "2cbef0e25c7af134",
+        "type": "function",
+        "z": "4f4869a9266855d4",
+        "name": "function 1 - validate + format line protocol",
+        "func": "const parts = msg.topic.split(\"/\");\n\nconst room = parts[1];\nconst type = parts[3];\n\nlet v = parseFloat(msg.payload.value);\nif (isNaN(v)) return null;\n\n// line protocol (tags included)\nmsg.payload = `sensor_data_v2,room=${room},type=${type} value=${v}`;\n\nmsg.headers = {\n  \"Authorization\": \"Token 2HOSt3nrZGCN0W8cWAD1k0d-thCMC9pzABQ4RM62qZqUOf-r-WRhK9rkdEesH6bKk5M39XPTzPfcYcfa3EWG5Q==\",\n  \"Content-Type\": \"text/plain\"\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 520,
+        "y": 200,
+        "wires": [
+            [
+                "3057750566c70444"
+            ]
+        ]
+    },
+    {
+        "id": "207e3bdf99750a55",
+        "type": "debug",
+        "z": "4f4869a9266855d4",
+        "name": "debug 2",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 160,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "f197e49ef59c0b7a",
+        "type": "influxdb out",
+        "z": "4f4869a9266855d4",
+        "influxdb": "98feec88edb1a54b",
+        "name": "",
+        "measurement": "sensor_data_v2",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "smart-home",
+        "bucket": "sensors",
+        "x": 650,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "3057750566c70444",
+        "type": "http request",
+        "z": "4f4869a9266855d4",
+        "name": "HTTP WRITE - Influx v2",
+        "method": "POST",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "http://influxdb:8086/api/v2/write?org=smart-home&bucket=sensors&precision=s",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 750,
+        "y": 260,
+        "wires": [
+            [
+                "e1d1212f179d5931"
+            ]
+        ]
+    },
+    {
+        "id": "d6befe9b29f9e378",
+        "type": "comment",
+        "z": "4f4869a9266855d4",
+        "name": "INGESTION PIPELINE",
+        "info": "Sensor Ingestion -> InfluxDB",
+        "x": 160,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "cf73290982341709",
+        "type": "ui-gauge",
+        "z": "49e1284654ecb233",
+        "name": "Temperature LivingRoom",
+        "group": "b2fcc6ca7856b28c",
+        "order": 1,
+        "value": "payload",
+        "valueType": "msg",
+        "width": 3,
+        "height": 3,
+        "gtype": "gauge-half",
+        "gstyle": "needle",
+        "title": "Temperature",
+        "alwaysShowTitle": false,
+        "floatingTitlePosition": "top-left",
+        "units": "°C",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#5443d6",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "18",
+                "color": "#44ff00",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "24",
+                "color": "#e69100",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "28",
+                "color": "#e81111",
+                "text": "",
+                "textType": "label"
+            }
+        ],
+        "min": 0,
+        "max": "40",
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 710,
+        "y": 280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "54638c274331b9ae",
+        "type": "mqtt in",
+        "z": "49e1284654ecb233",
+        "name": "",
+        "topic": "home/livingroom/sensor/temperature",
+        "qos": "2",
+        "datatype": "json",
+        "broker": "bf00a1908d24bbf2",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 180,
+        "y": 280,
+        "wires": [
+            [
+                "9337fc245c0ab318"
+            ]
+        ]
+    },
+    {
+        "id": "9337fc245c0ab318",
+        "type": "function",
+        "z": "49e1284654ecb233",
+        "name": "function 2",
+        "func": "msg.payload = Number(msg.payload.value);\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 480,
+        "y": 280,
+        "wires": [
+            [
+                "cf73290982341709"
+            ]
+        ]
+    },
+    {
+        "id": "eb842695d497726f",
+        "type": "comment",
+        "z": "49e1284654ecb233",
+        "name": "DASHBOARD DISPLAY",
+        "info": "",
+        "x": 150,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "6c1332b84b6923d6",
+        "type": "ui-switch",
+        "z": "49e1284654ecb233",
+        "name": "LR Light Switch",
+        "label": "Light",
+        "group": "983c57095835e884",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "decouple": false,
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "className": "",
+        "layout": "row-spread",
+        "clickableArea": "switch",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "x": 140,
+        "y": 400,
+        "wires": [
+            [
+                "10359744b8c0d237"
+            ]
+        ]
+    },
+    {
+        "id": "687a0662d9326d3a",
+        "type": "ui-switch",
+        "z": "49e1284654ecb233",
+        "name": "LR AC Switch",
+        "label": "AC",
+        "group": "983c57095835e884",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "decouple": false,
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "className": "",
+        "layout": "row-spread",
+        "clickableArea": "switch",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "x": 140,
+        "y": 460,
+        "wires": [
+            [
+                "d8adf165b38099dd"
+            ]
+        ]
+    },
+    {
+        "id": "60a789946ff6e439",
+        "type": "ui-switch",
+        "z": "49e1284654ecb233",
+        "name": "LR Fan Switch",
+        "label": "Fan",
+        "group": "983c57095835e884",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "decouple": false,
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "className": "",
+        "layout": "row-spread",
+        "clickableArea": "switch",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "x": 140,
+        "y": 520,
+        "wires": [
+            [
+                "fe8e6a8a4b011d84"
+            ]
+        ]
+    },
+    {
+        "id": "10359744b8c0d237",
+        "type": "function",
+        "z": "49e1284654ecb233",
+        "name": "Light function LR",
+        "func": "const mode = global.get(\"mode\") || \"Manual\";\n\nif (mode !== \"Manual\") {\n    // Ignore manual switches if not in manual mode\n    return null;\n}\n\nconst v = msg.payload;\nconst state = (v === true || v === \"ON\" || v === 1) ? \"ON\" : \"OFF\";\n\nmsg.topic = \"home/livingroom/actuator/light/set\";\nmsg.payload = { state };\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 410,
+        "y": 400,
+        "wires": [
+            [
+                "46999464d315d8e5",
+                "4a0df08ad6945636"
+            ]
+        ]
+    },
+    {
+        "id": "d8adf165b38099dd",
+        "type": "function",
+        "z": "49e1284654ecb233",
+        "name": "AC function LR",
+        "func": "const mode = global.get(\"mode\") || \"Manual\";\n\nif (mode !== \"Manual\") {\n    // Ignore manual switches if not in manual mode\n    return null;\n} \n\n// msg.payload might be true/false or already ON/OFF\nconst v = msg.payload;\nconst state = (v === true || v === \"ON\" || v === 1) ? \"ON\" : \"OFF\";\n\nmsg.topic = \"home/livingroom/actuator/ac/set\";\nmsg.payload = { state };\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 400,
+        "y": 460,
+        "wires": [
+            [
+                "27bfc74f46cc3936"
+            ]
+        ]
+    },
+    {
+        "id": "fe8e6a8a4b011d84",
+        "type": "function",
+        "z": "49e1284654ecb233",
+        "name": "Fan function LR",
+        "func": "const mode = global.get(\"mode\") || \"Manual\";\n\nif (mode !== \"Manual\") {\n    // Ignore manual switches if not in manual mode\n    return null;\n}\n\n// msg.payload might be true/false or already ON/OFF\nconst v = msg.payload;\nconst state = (v === true || v === \"ON\" || v === 1) ? \"ON\" : \"OFF\";\n\nmsg.topic = \"home/livingroom/actuator/fan/set\";\nmsg.payload = { state };\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 400,
+        "y": 520,
+        "wires": [
+            [
+                "5fa3b63ac8dc96d4"
+            ]
+        ]
+    },
+    {
+        "id": "46999464d315d8e5",
+        "type": "mqtt out",
+        "z": "49e1284654ecb233",
+        "name": "",
+        "topic": "",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "bf00a1908d24bbf2",
+        "x": 590,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "27bfc74f46cc3936",
+        "type": "mqtt out",
+        "z": "49e1284654ecb233",
+        "name": "",
+        "topic": "",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "bf00a1908d24bbf2",
+        "x": 610,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "5fa3b63ac8dc96d4",
+        "type": "mqtt out",
+        "z": "49e1284654ecb233",
+        "name": "",
+        "topic": "",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "bf00a1908d24bbf2",
+        "x": 570,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "4a0df08ad6945636",
+        "type": "debug",
+        "z": "49e1284654ecb233",
+        "name": "debug 4",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 520,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "2a60b45eae1498c0",
+        "type": "mqtt in",
+        "z": "49e1284654ecb233",
+        "name": "",
+        "topic": "home/livingroom/actuator/+/state",
+        "qos": "2",
+        "datatype": "json",
+        "broker": "bf00a1908d24bbf2",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 170,
+        "y": 600,
+        "wires": [
+            [
+                "4461b03a02b72ebc"
+            ]
+        ]
+    },
+    {
+        "id": "4461b03a02b72ebc",
+        "type": "function",
+        "z": "49e1284654ecb233",
+        "name": "function 3",
+        "func": "if (typeof msg.payload === \"string\") {\n  try { msg.payload = JSON.parse(msg.payload); } catch (e) {}\n}\n\nconst parts = (msg.topic || \"\").split(\"/\");\nconst device = parts[3];\n\nconst raw = msg.payload && msg.payload.state;\nconst state = (raw === true || raw === \"ON\" || raw === 1) ? \"ON\" : \"OFF\";\nif (!device) return null;\n\nconst key = \"lr_actuator_states\";\nconst states = global.get(key) || { light: \"OFF\", ac: \"OFF\", fan: \"OFF\" };\nstates[device] = state;\nglobal.set(key, states);\n\nmsg.payload = [\n  { device: \"Light\", state: states.light },\n  { device: \"AC\", state: states.ac },\n  { device: \"Fan\", state: states.fan }\n];\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 600,
+        "wires": [
+            [
+                "29e76b7936372a5b"
+            ]
+        ]
+    },
+    {
+        "id": "29e76b7936372a5b",
+        "type": "ui-table",
+        "z": "49e1284654ecb233",
+        "group": "51c7fac4f42cb161",
+        "name": "state table LR",
+        "label": "",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "maxrows": 0,
+        "passthru": false,
+        "autocols": true,
+        "showSearch": false,
+        "deselect": true,
+        "selectionType": "click",
+        "columns": [
+            {
+                "title": "",
+                "key": "",
+                "keyType": "key",
+                "type": "text",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "",
+                "key": "",
+                "keyType": "key",
+                "type": "text",
+                "width": "",
+                "align": "start"
+            }
+        ],
+        "mobileBreakpoint": "sm",
+        "mobileBreakpointType": "defaults",
+        "action": "replace",
+        "className": "",
+        "x": 640,
+        "y": 600,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f2d89eb09c5975e5",
+        "type": "ui-dropdown",
+        "z": "49e1284654ecb233",
+        "group": "69e350d71e0c77c2",
+        "name": "",
+        "label": "Mode",
+        "tooltip": "",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "multiple": false,
+        "chips": false,
+        "clearable": false,
+        "options": [
+            {
+                "label": "Manual",
+                "value": "Manual",
+                "type": "str"
+            },
+            {
+                "label": "Static",
+                "value": "Static",
+                "type": "str"
+            },
+            {
+                "label": "AI",
+                "value": "AI",
+                "type": "str"
+            }
+        ],
+        "payload": "",
+        "topic": "topic",
+        "topicType": "msg",
+        "className": "",
+        "typeIsComboBox": true,
+        "msgTrigger": "onChange",
+        "x": 570,
+        "y": 80,
+        "wires": [
+            [
+                "db5676caf9034c3d"
+            ]
+        ]
+    },
+    {
+        "id": "db5676caf9034c3d",
+        "type": "function",
+        "z": "49e1284654ecb233",
+        "name": "function 4",
+        "func": "global.set(\"mode\", msg.payload);\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 800,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d60a17d632f94ee5",
+        "type": "function",
+        "z": "49e1284654ecb233",
+        "name": "function 5",
+        "func": "msg.payload = Number(msg.payload.value);\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1340,
+        "y": 280,
+        "wires": [
+            [
+                "bb031678bb187cf4"
+            ]
+        ]
+    },
+    {
+        "id": "35e5c7cf4f41a6cc",
+        "type": "mqtt in",
+        "z": "49e1284654ecb233",
+        "name": "",
+        "topic": "home/bedroom/sensor/temperature",
+        "qos": "2",
+        "datatype": "json",
+        "broker": "bf00a1908d24bbf2",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 1040,
+        "y": 280,
+        "wires": [
+            [
+                "d60a17d632f94ee5"
+            ]
+        ]
+    },
+    {
+        "id": "bb031678bb187cf4",
+        "type": "ui-gauge",
+        "z": "49e1284654ecb233",
+        "name": "Temperature BR",
+        "group": "f13ffa804629e55b",
+        "order": 1,
+        "value": "payload",
+        "valueType": "msg",
+        "width": 3,
+        "height": 3,
+        "gtype": "gauge-half",
+        "gstyle": "needle",
+        "title": "Temperature",
+        "alwaysShowTitle": false,
+        "floatingTitlePosition": "top-left",
+        "units": "°C",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#5443d6",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "18",
+                "color": "#44ff00",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "24",
+                "color": "#e69100",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "28",
+                "color": "#e81111",
+                "text": "",
+                "textType": "label"
+            }
+        ],
+        "min": 0,
+        "max": "40",
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 1540,
+        "y": 280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "edc5ab7882752981",
+        "type": "ui-switch",
+        "z": "49e1284654ecb233",
+        "name": "BR Light Switch",
+        "label": "Light",
+        "group": "acb610a2ebe366e0",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "decouple": false,
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "className": "",
+        "layout": "row-spread",
+        "clickableArea": "switch",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "x": 1020,
+        "y": 400,
+        "wires": [
+            [
+                "328cade44a7534ca"
+            ]
+        ]
+    },
+    {
+        "id": "a1943078448fe5a1",
+        "type": "ui-switch",
+        "z": "49e1284654ecb233",
+        "name": "BR AC Switch",
+        "label": "AC",
+        "group": "acb610a2ebe366e0",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "decouple": false,
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "className": "",
+        "layout": "row-spread",
+        "clickableArea": "switch",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "x": 1020,
+        "y": 460,
+        "wires": [
+            [
+                "69dbce4af6fe1047"
+            ]
+        ]
+    },
+    {
+        "id": "fc1333b0fcf2caf3",
+        "type": "ui-switch",
+        "z": "49e1284654ecb233",
+        "name": "BR Fan Switch",
+        "label": "Fan",
+        "group": "acb610a2ebe366e0",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "decouple": false,
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "className": "",
+        "layout": "row-spread",
+        "clickableArea": "switch",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "x": 1020,
+        "y": 520,
+        "wires": [
+            [
+                "77af76d7717fbb4b"
+            ]
+        ]
+    },
+    {
+        "id": "328cade44a7534ca",
+        "type": "function",
+        "z": "49e1284654ecb233",
+        "name": "Light function BR",
+        "func": "const mode = global.get(\"mode\") || \"Manual\";\n\nif (mode !== \"Manual\") {\n    // Ignore manual switches if not in manual mode\n    return null;\n}\n\n// msg.payload might be true/false or already ON/OFF\nconst v = msg.payload;\nconst state = (v === true || v === \"ON\" || v === 1) ? \"ON\" : \"OFF\";\n\nmsg.topic = \"home/bedroom/actuator/light/set\";\nmsg.payload = { state };\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1290,
+        "y": 400,
+        "wires": [
+            [
+                "9480c7b13c1e5c87",
+                "90efcedd3d75690b"
+            ]
+        ]
+    },
+    {
+        "id": "69dbce4af6fe1047",
+        "type": "function",
+        "z": "49e1284654ecb233",
+        "name": "AC function BR",
+        "func": "const mode = global.get(\"mode\") || \"Manual\";\n\nif (mode !== \"Manual\") {\n    // Ignore manual switches if not in manual mode\n    return null;\n}\n\n// msg.payload might be true/false or already ON/OFF\nconst v = msg.payload;\nconst state = (v === true || v === \"ON\" || v === 1) ? \"ON\" : \"OFF\";\n\nmsg.topic = \"home/bedroom/actuator/ac/set\";\nmsg.payload = { state };\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1280,
+        "y": 460,
+        "wires": [
+            [
+                "e9c5d21306cae153"
+            ]
+        ]
+    },
+    {
+        "id": "77af76d7717fbb4b",
+        "type": "function",
+        "z": "49e1284654ecb233",
+        "name": "Fan function BR",
+        "func": "const mode = global.get(\"mode\") || \"Manual\";\n\nif (mode !== \"Manual\") {\n    // Ignore manual switches if not in manual mode\n    return null;\n}\n\n// msg.payload might be true/false or already ON/OFF\nconst v = msg.payload;\nconst state = (v === true || v === \"ON\" || v === 1) ? \"ON\" : \"OFF\";\n\nmsg.topic = \"home/bedroom/actuator/fan/set\";\nmsg.payload = { state };\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1280,
+        "y": 520,
+        "wires": [
+            [
+                "b4e92c6df6715b1c"
+            ]
+        ]
+    },
+    {
+        "id": "9480c7b13c1e5c87",
+        "type": "mqtt out",
+        "z": "49e1284654ecb233",
+        "name": "",
+        "topic": "",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "bf00a1908d24bbf2",
+        "x": 1470,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "e9c5d21306cae153",
+        "type": "mqtt out",
+        "z": "49e1284654ecb233",
+        "name": "",
+        "topic": "",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "bf00a1908d24bbf2",
+        "x": 1490,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "b4e92c6df6715b1c",
+        "type": "mqtt out",
+        "z": "49e1284654ecb233",
+        "name": "",
+        "topic": "",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "bf00a1908d24bbf2",
+        "x": 1450,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "90efcedd3d75690b",
+        "type": "debug",
+        "z": "49e1284654ecb233",
+        "name": "debug 5",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1480,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "b0bc44fcfe419118",
+        "type": "comment",
+        "z": "49e1284654ecb233",
+        "name": "LIVING ROOM",
+        "info": "",
+        "x": 140,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "8c162dbbfb751a30",
+        "type": "comment",
+        "z": "49e1284654ecb233",
+        "name": "BEDROOM",
+        "info": "",
+        "x": 990,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "1f7c43cd3621ff2a",
+        "type": "mqtt in",
+        "z": "49e1284654ecb233",
+        "name": "",
+        "topic": "home/bedroom/actuator/+/state",
+        "qos": "2",
+        "datatype": "json",
+        "broker": "bf00a1908d24bbf2",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 1050,
+        "y": 600,
+        "wires": [
+            [
+                "e7377c0d47e86a12"
+            ]
+        ]
+    },
+    {
+        "id": "e7377c0d47e86a12",
+        "type": "function",
+        "z": "49e1284654ecb233",
+        "name": "function 6",
+        "func": "if (typeof msg.payload === \"string\") {\n  try { msg.payload = JSON.parse(msg.payload); } catch (e) {}\n}\n\nconst parts = (msg.topic || \"\").split(\"/\");\nconst device = parts[3];\n\nconst raw = msg.payload && msg.payload.state;\nconst state = (raw === true || raw === \"ON\" || raw === 1) ? \"ON\" : \"OFF\";\nif (!device) return null;\n\nconst key = \"br_actuator_states\";\nconst states = global.get(key) || { light: \"OFF\", ac: \"OFF\", fan: \"OFF\" };\nstates[device] = state;\nglobal.set(key, states);\n\nmsg.payload = [\n  { device: \"Light\", state: states.light },\n  { device: \"AC\", state: states.ac },\n  { device: \"Fan\", state: states.fan }\n];\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1260,
+        "y": 600,
+        "wires": [
+            [
+                "625df7cab763295e"
+            ]
+        ]
+    },
+    {
+        "id": "625df7cab763295e",
+        "type": "ui-table",
+        "z": "49e1284654ecb233",
+        "group": "9e85b5be2a100bdc",
+        "name": "state table BR",
+        "label": "",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "maxrows": 0,
+        "passthru": false,
+        "autocols": true,
+        "showSearch": false,
+        "deselect": true,
+        "selectionType": "click",
+        "columns": [
+            {
+                "title": "",
+                "key": "",
+                "keyType": "key",
+                "type": "text",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "",
+                "key": "",
+                "keyType": "key",
+                "type": "text",
+                "width": "",
+                "align": "start"
+            }
+        ],
+        "mobileBreakpoint": "sm",
+        "mobileBreakpointType": "defaults",
+        "action": "replace",
+        "className": "",
+        "x": 1460,
+        "y": 600,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a60b4799a9cc7cf5",
+        "type": "function",
+        "z": "49e1284654ecb233",
+        "name": "function 12",
+        "func": "msg.payload = Number(msg.payload.value);\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 470,
+        "y": 800,
+        "wires": [
+            [
+                "3a80187f6377bd08"
+            ]
+        ]
+    },
+    {
+        "id": "9ed2efaa37e1a3a3",
+        "type": "mqtt in",
+        "z": "49e1284654ecb233",
+        "name": "",
+        "topic": "home/kitchen/sensor/temperature",
+        "qos": "2",
+        "datatype": "json",
+        "broker": "bf00a1908d24bbf2",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 160,
+        "y": 800,
+        "wires": [
+            [
+                "a60b4799a9cc7cf5"
+            ]
+        ]
+    },
+    {
+        "id": "3a80187f6377bd08",
+        "type": "ui-gauge",
+        "z": "49e1284654ecb233",
+        "name": "Temperature Kitchen",
+        "group": "f30d555d5228d7be",
+        "order": 3,
+        "value": "payload",
+        "valueType": "msg",
+        "width": 3,
+        "height": 3,
+        "gtype": "gauge-half",
+        "gstyle": "needle",
+        "title": "Temperature",
+        "alwaysShowTitle": false,
+        "floatingTitlePosition": "top-left",
+        "units": "°C",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#5443d6",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "18",
+                "color": "#44ff00",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "24",
+                "color": "#e69100",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "28",
+                "color": "#e81111",
+                "text": "",
+                "textType": "label"
+            }
+        ],
+        "min": 0,
+        "max": "40",
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 690,
+        "y": 800,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "45a73f9f637be551",
+        "type": "function",
+        "z": "49e1284654ecb233",
+        "name": "function 13",
+        "func": "msg.payload = Number(msg.payload.value);\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1320,
+        "y": 800,
+        "wires": [
+            [
+                "010b5ecf28c7722f"
+            ]
+        ]
+    },
+    {
+        "id": "56c9a9bfd858e3af",
+        "type": "mqtt in",
+        "z": "49e1284654ecb233",
+        "name": "",
+        "topic": "home/bathroom/sensor/temperature",
+        "qos": "2",
+        "datatype": "json",
+        "broker": "bf00a1908d24bbf2",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 1020,
+        "y": 800,
+        "wires": [
+            [
+                "45a73f9f637be551"
+            ]
+        ]
+    },
+    {
+        "id": "010b5ecf28c7722f",
+        "type": "ui-gauge",
+        "z": "49e1284654ecb233",
+        "name": "Temperature Bathroom",
+        "group": "54756c4ba4a87dae",
+        "order": 2,
+        "value": "payload",
+        "valueType": "msg",
+        "width": 3,
+        "height": 3,
+        "gtype": "gauge-half",
+        "gstyle": "needle",
+        "title": "Temperature",
+        "alwaysShowTitle": false,
+        "floatingTitlePosition": "top-left",
+        "units": "°C",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#5443d6",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "18",
+                "color": "#44ff00",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "24",
+                "color": "#e69100",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "28",
+                "color": "#e81111",
+                "text": "",
+                "textType": "label"
+            }
+        ],
+        "min": 0,
+        "max": "40",
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 1540,
+        "y": 800,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d17939a58b9fe6dd",
+        "type": "comment",
+        "z": "49e1284654ecb233",
+        "name": "KITCHEN",
+        "info": "",
+        "x": 110,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "0aa8fd3169c468a7",
+        "type": "comment",
+        "z": "49e1284654ecb233",
+        "name": "BATHROOM",
+        "info": "",
+        "x": 970,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "484d3e702b5b636d",
+        "type": "comment",
+        "z": "49e1284654ecb233",
+        "name": "HALLWAY",
+        "info": "",
+        "x": 120,
+        "y": 1320,
+        "wires": []
+    },
+    {
+        "id": "32397fe185979c92",
+        "type": "ui-switch",
+        "z": "49e1284654ecb233",
+        "name": "Kitchen Light Switch",
+        "label": "Light",
+        "group": "2302791229a238fa",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "decouple": false,
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "className": "",
+        "layout": "row-spread",
+        "clickableArea": "switch",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "x": 160,
+        "y": 1040,
+        "wires": [
+            [
+                "0ddddc2f3dff02ab"
+            ]
+        ]
+    },
+    {
+        "id": "2ef08606501f6f5f",
+        "type": "ui-switch",
+        "z": "49e1284654ecb233",
+        "name": "Kitchen Exhaust Fan Switch",
+        "label": "Fan",
+        "group": "2302791229a238fa",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "decouple": false,
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "className": "",
+        "layout": "row-spread",
+        "clickableArea": "switch",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "x": 180,
+        "y": 1100,
+        "wires": [
+            [
+                "09aa850577adf70e"
+            ]
+        ]
+    },
+    {
+        "id": "0ddddc2f3dff02ab",
+        "type": "function",
+        "z": "49e1284654ecb233",
+        "name": "Light function Kitchen",
+        "func": "const mode = global.get(\"mode\") || \"Manual\";\n\nif (mode !== \"Manual\") {\n    // Ignore manual switches if not in manual mode\n    return null;\n}\n\nconst v = msg.payload;\nconst state = (v === true || v === \"ON\" || v === 1) ? \"ON\" : \"OFF\";\n\nmsg.topic = \"home/kitchen/actuator/light/set\";\nmsg.payload = { state };\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 480,
+        "y": 1040,
+        "wires": [
+            [
+                "a9c9d88e75add435",
+                "745872bfe36b5e20"
+            ]
+        ]
+    },
+    {
+        "id": "09aa850577adf70e",
+        "type": "function",
+        "z": "49e1284654ecb233",
+        "name": "Exhaust Fan function Kitchen",
+        "func": "const mode = global.get(\"mode\") || \"Manual\";\n\nif (mode !== \"Manual\") {\n    // Ignore manual switches if not in manual mode\n    return null;\n} \n\n// msg.payload might be true/false or already ON/OFF\nconst v = msg.payload;\nconst state = (v === true || v === \"ON\" || v === 1) ? \"ON\" : \"OFF\";\n\nmsg.topic = \"home/kitchen/actuator/exhaustfan/set\";\nmsg.payload = { state };\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 500,
+        "y": 1100,
+        "wires": [
+            [
+                "dc638f2b6876862c"
+            ]
+        ]
+    },
+    {
+        "id": "a9c9d88e75add435",
+        "type": "mqtt out",
+        "z": "49e1284654ecb233",
+        "name": "",
+        "topic": "",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "bf00a1908d24bbf2",
+        "x": 730,
+        "y": 1040,
+        "wires": []
+    },
+    {
+        "id": "dc638f2b6876862c",
+        "type": "mqtt out",
+        "z": "49e1284654ecb233",
+        "name": "",
+        "topic": "",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "bf00a1908d24bbf2",
+        "x": 730,
+        "y": 1100,
+        "wires": []
+    },
+    {
+        "id": "745872bfe36b5e20",
+        "type": "debug",
+        "z": "49e1284654ecb233",
+        "name": "debug 6",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 520,
+        "y": 980,
+        "wires": []
+    },
+    {
+        "id": "602c1a2ef4be6745",
+        "type": "comment",
+        "z": "49e1284654ecb233",
+        "name": "SENSORS",
+        "info": "living room - temp gauge\n\nbedroom - temp gauge\n\n\nkitchen -\ntemp gauge\nsmoke text\nmotion text\n\n\nbathroom - \ntemp gauge\nhumidity gauge\nmotion text\n\n\nhallway - motion template",
+        "x": 80,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "e18b12e34d36b22a",
+        "type": "function",
+        "z": "49e1284654ecb233",
+        "name": "function 15",
+        "func": "msg.payload = Number(msg.payload.value);\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 470,
+        "y": 860,
+        "wires": [
+            [
+                "2265e7da24bb8c4a"
+            ]
+        ]
+    },
+    {
+        "id": "263da76a7d9227e9",
+        "type": "mqtt in",
+        "z": "49e1284654ecb233",
+        "name": "",
+        "topic": "home/kitchen/sensor/smoke",
+        "qos": "2",
+        "datatype": "json",
+        "broker": "bf00a1908d24bbf2",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 150,
+        "y": 860,
+        "wires": [
+            [
+                "e18b12e34d36b22a"
+            ]
+        ]
+    },
+    {
+        "id": "7e0b0606288e1a17",
+        "type": "function",
+        "z": "49e1284654ecb233",
+        "name": "function 16",
+        "func": "msg.payload = Number(msg.payload.value);\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1310,
+        "y": 860,
+        "wires": [
+            [
+                "7b84ff549d0e7821"
+            ]
+        ]
+    },
+    {
+        "id": "46a21b78dbe74820",
+        "type": "mqtt in",
+        "z": "49e1284654ecb233",
+        "name": "",
+        "topic": "home/bathroom/sensor/humidity",
+        "qos": "2",
+        "datatype": "json",
+        "broker": "bf00a1908d24bbf2",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 1010,
+        "y": 860,
+        "wires": [
+            [
+                "7e0b0606288e1a17"
+            ]
+        ]
+    },
+    {
+        "id": "7b84ff549d0e7821",
+        "type": "ui-gauge",
+        "z": "49e1284654ecb233",
+        "name": "Humidity Bathroom",
+        "group": "54756c4ba4a87dae",
+        "order": 5,
+        "value": "payload",
+        "valueType": "msg",
+        "width": 3,
+        "height": 3,
+        "gtype": "gauge-half",
+        "gstyle": "needle",
+        "title": "Temperature",
+        "alwaysShowTitle": false,
+        "floatingTitlePosition": "top-left",
+        "units": "°C",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#5443d6",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "18",
+                "color": "#44ff00",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "24",
+                "color": "#e69100",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "28",
+                "color": "#e81111",
+                "text": "",
+                "textType": "label"
+            }
+        ],
+        "min": 0,
+        "max": "40",
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 1530,
+        "y": 860,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "cf1777b94cbd9e10",
+        "type": "mqtt in",
+        "z": "49e1284654ecb233",
+        "name": "",
+        "topic": "home/kitchen/actuator/+/state",
+        "qos": "2",
+        "datatype": "json",
+        "broker": "bf00a1908d24bbf2",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 180,
+        "y": 1180,
+        "wires": [
+            [
+                "a629298931967722"
+            ]
+        ]
+    },
+    {
+        "id": "a629298931967722",
+        "type": "function",
+        "z": "49e1284654ecb233",
+        "name": "function 17",
+        "func": "if (typeof msg.payload === \"string\") {\n  try { msg.payload = JSON.parse(msg.payload); } catch (e) {}\n}\n\nconst parts = (msg.topic || \"\").split(\"/\");\nconst device = parts[3];\n\nconst raw = msg.payload && msg.payload.state;\nconst state = (raw === true || raw === \"ON\" || raw === 1) ? \"ON\" : \"OFF\";\nif (!device) return null;\n\nconst key = \"kitchen_actuator_states\";\nconst states = global.get(key) || { light: \"OFF\", ac: \"OFF\", fan: \"OFF\" };\nstates[device] = state;\nglobal.set(key, states);\n\nmsg.payload = [\n  { device: \"Light\", state: states.light },\n  { device: \"Exhaust Fan\", state: states.fan }\n];\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 440,
+        "y": 1180,
+        "wires": [
+            [
+                "ee3478aa939413e3"
+            ]
+        ]
+    },
+    {
+        "id": "ee3478aa939413e3",
+        "type": "ui-table",
+        "z": "49e1284654ecb233",
+        "group": "e9306beb6c70c3f3",
+        "name": "state table Kitchen",
+        "label": "",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "maxrows": 0,
+        "passthru": false,
+        "autocols": true,
+        "showSearch": false,
+        "deselect": true,
+        "selectionType": "click",
+        "columns": [
+            {
+                "title": "",
+                "key": "",
+                "keyType": "key",
+                "type": "text",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "",
+                "key": "",
+                "keyType": "key",
+                "type": "text",
+                "width": "",
+                "align": "start"
+            }
+        ],
+        "mobileBreakpoint": "sm",
+        "mobileBreakpointType": "defaults",
+        "action": "replace",
+        "className": "",
+        "x": 670,
+        "y": 1180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2265e7da24bb8c4a",
+        "type": "ui-text",
+        "z": "49e1284654ecb233",
+        "group": "f30d555d5228d7be",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "Smoke Kitchen",
+        "label": "Smoke Kitchen",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#717171",
+        "wrapText": false,
+        "className": "",
+        "value": "payload",
+        "valueType": "msg",
+        "x": 680,
+        "y": 860,
+        "wires": []
+    },
+    {
+        "id": "41f242f9f92eea56",
+        "type": "ui-switch",
+        "z": "49e1284654ecb233",
+        "name": "Bathroom Light Switch",
+        "label": "Light",
+        "group": "010bfa593d293c11",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "decouple": false,
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "className": "",
+        "layout": "row-spread",
+        "clickableArea": "switch",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "x": 1000,
+        "y": 1060,
+        "wires": [
+            [
+                "b1cea67b25f7f37c"
+            ]
+        ]
+    },
+    {
+        "id": "4564ef5a621e6dfe",
+        "type": "ui-switch",
+        "z": "49e1284654ecb233",
+        "name": "Bathroom Ventilation Fan Switch",
+        "label": "Fan",
+        "group": "010bfa593d293c11",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "decouple": false,
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "className": "",
+        "layout": "row-spread",
+        "clickableArea": "switch",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "x": 1030,
+        "y": 1120,
+        "wires": [
+            [
+                "d55872e7fb957ee5"
+            ]
+        ]
+    },
+    {
+        "id": "b1cea67b25f7f37c",
+        "type": "function",
+        "z": "49e1284654ecb233",
+        "name": "Light function Bathroom",
+        "func": "const mode = global.get(\"mode\") || \"Manual\";\n\nif (mode !== \"Manual\") {\n    // Ignore manual switches if not in manual mode\n    return null;\n}\n\nconst v = msg.payload;\nconst state = (v === true || v === \"ON\" || v === 1) ? \"ON\" : \"OFF\";\n\nmsg.topic = \"home/bathroom/actuator/light/set\";\nmsg.payload = { state };\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1330,
+        "y": 1060,
+        "wires": [
+            [
+                "96e80c40378b8b4f",
+                "0801ce974cca2184"
+            ]
+        ]
+    },
+    {
+        "id": "d55872e7fb957ee5",
+        "type": "function",
+        "z": "49e1284654ecb233",
+        "name": "Ventilation Fan function Bathroom",
+        "func": "const mode = global.get(\"mode\") || \"Manual\";\n\nif (mode !== \"Manual\") {\n    // Ignore manual switches if not in manual mode\n    return null;\n} \n\n// msg.payload might be true/false or already ON/OFF\nconst v = msg.payload;\nconst state = (v === true || v === \"ON\" || v === 1) ? \"ON\" : \"OFF\";\n\nmsg.topic = \"home/bathroom/actuator/ventfan/set\";\nmsg.payload = { state };\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1360,
+        "y": 1120,
+        "wires": [
+            [
+                "cf49c46e894d9f8d"
+            ]
+        ]
+    },
+    {
+        "id": "96e80c40378b8b4f",
+        "type": "mqtt out",
+        "z": "49e1284654ecb233",
+        "name": "",
+        "topic": "",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "bf00a1908d24bbf2",
+        "x": 1570,
+        "y": 1060,
+        "wires": []
+    },
+    {
+        "id": "cf49c46e894d9f8d",
+        "type": "mqtt out",
+        "z": "49e1284654ecb233",
+        "name": "",
+        "topic": "",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "bf00a1908d24bbf2",
+        "x": 1570,
+        "y": 1120,
+        "wires": []
+    },
+    {
+        "id": "0801ce974cca2184",
+        "type": "debug",
+        "z": "49e1284654ecb233",
+        "name": "debug 7",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1360,
+        "y": 1000,
+        "wires": []
+    },
+    {
+        "id": "8c6acce1f28772b2",
+        "type": "ui-switch",
+        "z": "49e1284654ecb233",
+        "name": "Hallway Light Switch",
+        "label": "light",
+        "group": "e6e8f63ddaee0d56",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "decouple": false,
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "className": "",
+        "layout": "row-spread",
+        "clickableArea": "switch",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "x": 140,
+        "y": 1500,
+        "wires": [
+            [
+                "9aba0bef1faa7aa3"
+            ]
+        ]
+    },
+    {
+        "id": "9aba0bef1faa7aa3",
+        "type": "function",
+        "z": "49e1284654ecb233",
+        "name": "Light function Hallway",
+        "func": "const mode = global.get(\"mode\") || \"Manual\";\n\nif (mode !== \"Manual\") {\n    // Ignore manual switches if not in manual mode\n    return null;\n} \n\n// msg.payload might be true/false or already ON/OFF\nconst v = msg.payload;\nconst state = (v === true || v === \"ON\" || v === 1) ? \"ON\" : \"OFF\";\n\nmsg.topic = \"home/hallway/actuator/light/set\";\nmsg.payload = { state };\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 460,
+        "y": 1500,
+        "wires": [
+            [
+                "98409bdb8b191c05",
+                "644aea947b3f3a36"
+            ]
+        ]
+    },
+    {
+        "id": "98409bdb8b191c05",
+        "type": "mqtt out",
+        "z": "49e1284654ecb233",
+        "name": "",
+        "topic": "",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "bf00a1908d24bbf2",
+        "x": 710,
+        "y": 1500,
+        "wires": []
+    },
+    {
+        "id": "644aea947b3f3a36",
+        "type": "debug",
+        "z": "49e1284654ecb233",
+        "name": "debug 8",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 660,
+        "y": 1460,
+        "wires": []
+    },
+    {
+        "id": "dc929c8ee5658251",
+        "type": "mqtt in",
+        "z": "49e1284654ecb233",
+        "name": "",
+        "topic": "home/kitchen/sensor/motion",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "bf00a1908d24bbf2",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 160,
+        "y": 920,
+        "wires": [
+            [
+                "d9c3586e95e12990"
+            ]
+        ]
+    },
+    {
+        "id": "d9c3586e95e12990",
+        "type": "function",
+        "z": "49e1284654ecb233",
+        "name": "",
+        "func": "const v = Number(msg.payload.value);\n\nif (v === 1) {\n    msg.payload = \"Motion Detected\";\n} else {\n    msg.payload = \"No Motion\";\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 460,
+        "y": 920,
+        "wires": [
+            [
+                "bf4be7a7a7b95612"
+            ]
+        ]
+    },
+    {
+        "id": "bf4be7a7a7b95612",
+        "type": "ui-text",
+        "z": "49e1284654ecb233",
+        "group": "34dc53797af264e6",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "Motion Kitchen",
+        "label": "kitchen motion",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#717171",
+        "wrapText": false,
+        "className": "",
+        "value": "payload",
+        "valueType": "msg",
+        "x": 680,
+        "y": 920,
+        "wires": []
+    },
+    {
+        "id": "a5adab4519f26156",
+        "type": "mqtt in",
+        "z": "49e1284654ecb233",
+        "name": "",
+        "topic": "home/bathroom/sensor/motion",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "bf00a1908d24bbf2",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 1000,
+        "y": 920,
+        "wires": [
+            [
+                "1d2670890d3764f7"
+            ]
+        ]
+    },
+    {
+        "id": "1d2670890d3764f7",
+        "type": "function",
+        "z": "49e1284654ecb233",
+        "name": "",
+        "func": "const v = Number(msg.payload.value);\n\nif (v === 1) {\n    msg.payload = \"Motion Detected\";\n} else {\n    msg.payload = \"No Motion\";\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1300,
+        "y": 920,
+        "wires": [
+            [
+                "6bd98b9c1c25fd60"
+            ]
+        ]
+    },
+    {
+        "id": "6bd98b9c1c25fd60",
+        "type": "ui-text",
+        "z": "49e1284654ecb233",
+        "group": "34dc53797af264e6",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "Motion Bathroom",
+        "label": "bathroom motion",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#717171",
+        "wrapText": false,
+        "className": "",
+        "value": "payload",
+        "valueType": "msg",
+        "x": 1530,
+        "y": 920,
+        "wires": []
+    },
+    {
+        "id": "11455f90463ba275",
+        "type": "mqtt in",
+        "z": "49e1284654ecb233",
+        "name": "",
+        "topic": "home/bathroom/actuator/+/state",
+        "qos": "2",
+        "datatype": "json",
+        "broker": "bf00a1908d24bbf2",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 1050,
+        "y": 1200,
+        "wires": [
+            [
+                "be03a7ee881b424c"
+            ]
+        ]
+    },
+    {
+        "id": "be03a7ee881b424c",
+        "type": "function",
+        "z": "49e1284654ecb233",
+        "name": "function 18",
+        "func": "if (typeof msg.payload === \"string\") {\n  try { msg.payload = JSON.parse(msg.payload); } catch (e) {}\n}\n\nconst parts = (msg.topic || \"\").split(\"/\");\nconst device = parts[3];\n\nconst raw = msg.payload && msg.payload.state;\nconst state = (raw === true || raw === \"ON\" || raw === 1) ? \"ON\" : \"OFF\";\nif (!device) return null;\n\nconst key = \"bathroom_actuator_states\";\nconst states = global.get(key) || { light: \"OFF\", ac: \"OFF\", fan: \"OFF\" };\nstates[device] = state;\nglobal.set(key, states);\n\nmsg.payload = [\n  { device: \"Light\", state: states.light },\n  { device: \"Ventilation Fan\", state: states.fan }\n];\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1300,
+        "y": 1200,
+        "wires": [
+            [
+                "1324c9060af0dc2b"
+            ]
+        ]
+    },
+    {
+        "id": "1324c9060af0dc2b",
+        "type": "ui-table",
+        "z": "49e1284654ecb233",
+        "group": "0c3f44be9fcb3c2e",
+        "name": "state table Bathroom",
+        "label": "",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "maxrows": 0,
+        "passthru": false,
+        "autocols": true,
+        "showSearch": false,
+        "deselect": true,
+        "selectionType": "click",
+        "columns": [
+            {
+                "title": "",
+                "key": "",
+                "keyType": "key",
+                "type": "text",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "",
+                "key": "",
+                "keyType": "key",
+                "type": "text",
+                "width": "",
+                "align": "start"
+            }
+        ],
+        "mobileBreakpoint": "sm",
+        "mobileBreakpointType": "defaults",
+        "action": "replace",
+        "className": "",
+        "x": 1540,
+        "y": 1200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c28a0a54e1406513",
+        "type": "mqtt in",
+        "z": "49e1284654ecb233",
+        "name": "",
+        "topic": "home/hallway/actuator/+/state",
+        "qos": "2",
+        "datatype": "json",
+        "broker": "bf00a1908d24bbf2",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 160,
+        "y": 1600,
+        "wires": [
+            [
+                "0737b3a3ad8c2fb2"
+            ]
+        ]
+    },
+    {
+        "id": "0737b3a3ad8c2fb2",
+        "type": "function",
+        "z": "49e1284654ecb233",
+        "name": "function 19",
+        "func": "if (typeof msg.payload === \"string\") {\n  try { msg.payload = JSON.parse(msg.payload); } catch (e) {}\n}\n\nconst parts = (msg.topic || \"\").split(\"/\");\nconst device = parts[3];\n\nconst raw = msg.payload && msg.payload.state;\nconst state = (raw === true || raw === \"ON\" || raw === 1) ? \"ON\" : \"OFF\";\nif (!device) return null;\n\nconst key = \"hallway_actuator_states\";\nconst states = global.get(key) || { light: \"OFF\", ac: \"OFF\", fan: \"OFF\" };\nstates[device] = state;\nglobal.set(key, states);\n\nmsg.payload = [\n  { device: \"Light\", state: states.light },\n];\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 1600,
+        "wires": [
+            [
+                "f8fb9f0eda4d231f"
+            ]
+        ]
+    },
+    {
+        "id": "f8fb9f0eda4d231f",
+        "type": "ui-table",
+        "z": "49e1284654ecb233",
+        "group": "48546018f818ab44",
+        "name": "state table Hallway",
+        "label": "",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "maxrows": 0,
+        "passthru": false,
+        "autocols": true,
+        "showSearch": false,
+        "deselect": true,
+        "selectionType": "click",
+        "columns": [
+            {
+                "title": "",
+                "key": "",
+                "keyType": "key",
+                "type": "text",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "",
+                "key": "",
+                "keyType": "key",
+                "type": "text",
+                "width": "",
+                "align": "start"
+            }
+        ],
+        "mobileBreakpoint": "sm",
+        "mobileBreakpointType": "defaults",
+        "action": "replace",
+        "className": "",
+        "x": 650,
+        "y": 1600,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3019c50fde25b005",
+        "type": "comment",
+        "z": "49e1284654ecb233",
+        "name": "ACTUATORS",
+        "info": "living room - \nlight switch\nac switch\nfan switch\n\n\nbedroom -\nlight switch\nac switch\nfan switch\n\n\nkitchen -\nlight switch\nexhaust fan switch\n\n\nbathroom - \nlight switch\nventilation fan switch \n\n\nhallway -\nlight switch\n\n",
+        "x": 250,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "686e97f5a94c0faa",
+        "type": "mqtt in",
+        "z": "49e1284654ecb233",
+        "name": "",
+        "topic": "home/hallway/sensor/motion",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "bf00a1908d24bbf2",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 160,
+        "y": 1380,
+        "wires": [
+            [
+                "571490154d7d72fc"
+            ]
+        ]
+    },
+    {
+        "id": "571490154d7d72fc",
+        "type": "function",
+        "z": "49e1284654ecb233",
+        "name": "function 14",
+        "func": "const v = Number(msg.payload.value);\n\nif (v === 1) {\n    msg.payload = `\n    <div style=\"background:#4CAF50;\n                color:white;\n                padding:10px;\n                border-radius:8px;\n                text-align:center;\n                font-weight:bold;\">\n        🚶 MOTION DETECTED\n    </div>`;\n} else {\n    msg.payload = `\n    <div style=\"background:#9E9E9E;\n                color:white;\n                padding:10px;\n                border-radius:8px;\n                text-align:center;\">\n        No Motion\n    </div>`;\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 430,
+        "y": 1380,
+        "wires": [
+            [
+                "9e317073b24676fc"
+            ]
+        ]
+    },
+    {
+        "id": "9e317073b24676fc",
+        "type": "ui-template",
+        "z": "49e1284654ecb233",
+        "group": "34dc53797af264e6",
+        "page": "",
+        "ui": "",
+        "name": "motion Hallway",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "head": "",
+        "format": "{{{msg.payload}}}",
+        "storeOutMessages": true,
+        "passthru": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 680,
+        "y": 1380,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "538403eb9b829a9b",
+        "type": "mqtt in",
+        "z": "9539bcdd3d66373d",
+        "name": "",
+        "topic": "home/+/actuator/+/set",
+        "qos": "2",
+        "datatype": "json",
+        "broker": "bf00a1908d24bbf2",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 120,
+        "y": 80,
+        "wires": [
+            [
+                "22e45cce85236869"
+            ]
+        ]
+    },
+    {
+        "id": "22e45cce85236869",
+        "type": "function",
+        "z": "9539bcdd3d66373d",
+        "name": "function 1",
+        "func": "// Ensure payload is object\nif (typeof msg.payload === \"string\") {\n  try { msg.payload = JSON.parse(msg.payload); } catch (e) {}\n}\n\nconst parts = (msg.topic || \"\").split(\"/\");\nconst room = parts[1];\nconst device = parts[3];\n\nlet raw = msg.payload && msg.payload.state;\n\n// normalize to ON/OFF\nconst state = (raw === true || raw === \"ON\" || raw === 1) ? \"ON\" : \"OFF\";\n\nmsg.topic = `home/${room}/actuator/${device}/state`;\nmsg.payload = { state, ts: Date.now() };\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 80,
+        "wires": [
+            [
+                "9d7ffc5149d3eecc",
+                "58993bc08666e3b7"
+            ]
+        ]
+    },
+    {
+        "id": "9d7ffc5149d3eecc",
+        "type": "mqtt out",
+        "z": "9539bcdd3d66373d",
+        "name": "state",
+        "topic": "",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "bf00a1908d24bbf2",
+        "x": 610,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "58993bc08666e3b7",
+        "type": "debug",
+        "z": "9539bcdd3d66373d",
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 600,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "499d94a658527ba3",
+        "type": "mqtt in",
+        "z": "eb4fff834c698462",
+        "name": "",
+        "topic": "home/livingroom/sensor/temperature",
+        "qos": "2",
+        "datatype": "json",
+        "broker": "bf00a1908d24bbf2",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 180,
+        "y": 60,
+        "wires": [
+            [
+                "e7c1da9379268b30"
+            ]
+        ]
+    },
+    {
+        "id": "e7c1da9379268b30",
+        "type": "function",
+        "z": "eb4fff834c698462",
+        "name": "static LR AC rule",
+        "func": "const mode = global.get(\"mode\") || \"Manual\";\nif (mode !== \"Static\") return null;\n\nconst temp = Number(msg.payload.value);\nif (Number.isNaN(temp)) return null;\n\n// hysteresis thresholds\nconst ON_AT = 27.5;\nconst OFF_AT = 24.0;\n\n// remember last AC state so we don't spam commands\nconst key = \"lr_ac_state\";\nconst prev = global.get(key) || \"OFF\";\n\nlet next = prev;\n\nif (temp >= ON_AT) next = \"ON\";\nif (temp <= OFF_AT) next = \"OFF\";\n\nif (next === prev) return null;\n\nglobal.set(key, next);\n\nmsg.topic = \"home/livingroom/actuator/ac/set\";\nmsg.payload = { state: next, reason: `static_temp_rule temp=${temp}` };\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 490,
+        "y": 60,
+        "wires": [
+            [
+                "4ce69e1eb8d14e97"
+            ]
+        ]
+    },
+    {
+        "id": "4ce69e1eb8d14e97",
+        "type": "mqtt out",
+        "z": "eb4fff834c698462",
+        "name": "",
+        "topic": "",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "bf00a1908d24bbf2",
+        "x": 670,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "718034838e17f087",
+        "type": "trigger",
+        "z": "eb4fff834c698462",
+        "name": "",
+        "op1": "",
+        "op2": "OFF",
+        "op1type": "nul",
+        "op2type": "str",
+        "duration": "30",
+        "extend": true,
+        "overrideDelay": false,
+        "units": "s",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 590,
+        "y": 300,
+        "wires": [
+            [
+                "53fd734564446304"
+            ]
+        ]
+    },
+    {
+        "id": "a54395203fbc4e29",
+        "type": "mqtt in",
+        "z": "eb4fff834c698462",
+        "name": "",
+        "topic": "home/bedroom/sensor/temperature",
+        "qos": "2",
+        "datatype": "json",
+        "broker": "bf00a1908d24bbf2",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 180,
+        "y": 180,
+        "wires": [
+            [
+                "f46c8c82042ca417"
+            ]
+        ]
+    },
+    {
+        "id": "f46c8c82042ca417",
+        "type": "function",
+        "z": "eb4fff834c698462",
+        "name": "static BR AC rule",
+        "func": "const mode = global.get(\"mode\") || \"Manual\";\nif (mode !== \"Static\") return null;\n\nconst temp = Number(msg.payload.value);\nif (Number.isNaN(temp)) return null;\n\n// hysteresis thresholds\nconst ON_AT = 27.5;\nconst OFF_AT = 24.0;\n\n// remember last AC state so we don't spam commands\nconst key = \"br_ac_state\";\nconst prev = global.get(key) || \"OFF\";\n\nlet next = prev;\n\nif (temp >= ON_AT) next = \"ON\";\nif (temp <= OFF_AT) next = \"OFF\";\n\nif (next === prev) return null;\n\nglobal.set(key, next);\n\nmsg.topic = \"home/bedroom/actuator/ac/set\";\nmsg.payload = { state: next, reason: `static_temp_rule temp=${temp}` };\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 490,
+        "y": 180,
+        "wires": [
+            [
+                "80336a99b070829a"
+            ]
+        ]
+    },
+    {
+        "id": "80336a99b070829a",
+        "type": "mqtt out",
+        "z": "eb4fff834c698462",
+        "name": "",
+        "topic": "",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "bf00a1908d24bbf2",
+        "x": 670,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "6aeda58496b7b1fa",
+        "type": "mqtt in",
+        "z": "eb4fff834c698462",
+        "name": "",
+        "topic": "home/bathroom/sensor/humidity",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "bf00a1908d24bbf2",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 170,
+        "y": 440,
+        "wires": [
+            [
+                "c9a7a41c8c7a2792"
+            ]
+        ]
+    },
+    {
+        "id": "a36c901faf045992",
+        "type": "mqtt out",
+        "z": "eb4fff834c698462",
+        "name": "",
+        "topic": "",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "bf00a1908d24bbf2",
+        "x": 750,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "c9a7a41c8c7a2792",
+        "type": "function",
+        "z": "eb4fff834c698462",
+        "name": "function 7",
+        "func": "const mode = global.get(\"mode\") || \"Manual\";\nif (mode !== \"Static\") return null;\n\nconst hum = Number(msg.payload.value);\nif (Number.isNaN(hum)) return null;\n\nconst ON_AT = 70;\nconst OFF_AT = 60;\n\nconst key = \"bathroom_fan_state\";\nconst prev = global.get(key) || \"OFF\";\n\nlet next = prev;\n\nif (hum >= ON_AT) next = \"ON\";\nif (hum <= OFF_AT) next = \"OFF\";\n\nif (next === prev) return null;\n\nglobal.set(key, next);\n\nmsg.topic = \"home/bathroom/actuator/fan/set\";\nmsg.payload = {\n    state: next,\n    reason: `Static humidity rule hum=${hum}`\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 440,
+        "y": 440,
+        "wires": [
+            [
+                "a36c901faf045992"
+            ]
+        ]
+    },
+    {
+        "id": "ea3c475f44d580ed",
+        "type": "function",
+        "z": "eb4fff834c698462",
+        "name": "function 11",
+        "func": "const mode = global.get(\"mode\") || \"Manual\";\nif (mode !== \"Static\") return null;\n\nconst motion = Number(msg.payload.value);\nif (Number.isNaN(motion)) return null;\n\nmsg.motion = motion;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 410,
+        "y": 300,
+        "wires": [
+            [
+                "718034838e17f087"
+            ]
+        ]
+    },
+    {
+        "id": "717236089d2241a5",
+        "type": "mqtt in",
+        "z": "eb4fff834c698462",
+        "name": "",
+        "topic": "home/hallway/sensor/motion",
+        "qos": "2",
+        "datatype": "json",
+        "broker": "bf00a1908d24bbf2",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 180,
+        "y": 300,
+        "wires": [
+            [
+                "ea3c475f44d580ed"
+            ]
+        ]
+    },
+    {
+        "id": "d3e1182daf0b75a4",
+        "type": "mqtt out",
+        "z": "eb4fff834c698462",
+        "name": "",
+        "topic": "",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "bf00a1908d24bbf2",
+        "x": 970,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "9c1eedcb34dcce26",
+        "type": "function",
+        "z": "eb4fff834c698462",
+        "name": "function 20",
+        "func": "const mode = global.get(\"mode\") || \"Manual\";\nif (mode !== \"Static\") return null;\n\nconst smoke = Number(msg.payload.value);\nif (Number.isNaN(smoke)) return null;\n\nif (smoke !== 1) return null;\n\nmsg.topic = \"home/kitchen/actuator/fan/set\";\nmsg.payload = {\n    state: \"ON\",\n    reason: \"Static smoke detected\"\n};\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 450,
+        "y": 560,
+        "wires": [
+            [
+                "2e014a42f24bf851"
+            ]
+        ]
+    },
+    {
+        "id": "964d701613676b05",
+        "type": "mqtt in",
+        "z": "eb4fff834c698462",
+        "name": "",
+        "topic": "home/kitchen/sensor/smoke",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "bf00a1908d24bbf2",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 160,
+        "y": 560,
+        "wires": [
+            [
+                "9c1eedcb34dcce26"
+            ]
+        ]
+    },
+    {
+        "id": "2e014a42f24bf851",
+        "type": "mqtt out",
+        "z": "eb4fff834c698462",
+        "name": "",
+        "topic": "",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "bf00a1908d24bbf2",
+        "x": 670,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "53fd734564446304",
+        "type": "function",
+        "z": "eb4fff834c698462",
+        "name": "function 21",
+        "func": "msg.topic = \"home/hallway/actuator/light/set\";\n\nif (msg.payload === 1) {\n    msg.payload = {\n        state: \"ON\",\n        reason: \"Static motion detected\"\n    };\n    return msg;\n}\n\nif (msg.payload === \"OFF\") {\n    msg.payload = {\n        state: \"OFF\",\n        reason: \"Static no motion 30s\"\n    };\n    return msg;\n}\n\nreturn null;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 790,
+        "y": 300,
+        "wires": [
+            [
+                "d3e1182daf0b75a4"
+            ]
+        ]
+    }
+]

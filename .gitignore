@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Environment files
+.env
+
+# InfluxDB runtime data
+influxdb/data/
+
+# Node-RED runtime/cache
+nodered/data/.npm/
+
+# Node-RED installed packages
+nodered/data/node_modules/
+
+# OS/editor files
+.DS_Store
+Thumbs.db
+
