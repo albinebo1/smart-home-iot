@@ -1,7 +1,6 @@
 from app.schemas.room import Room
-from app.services.influx_service import query_latest_sensor
 from app.services.influx_service import query_latest_sensor, query_sensor_history
-from app.services.mqtt_service import publish
+from app.services.mqtt_service import publish, get_actuator_state
 
 ROOM_IDS = [
     "livingroom",
@@ -25,8 +24,11 @@ def build_room(room_id: str) -> Room:
         motion=int(motion) if motion is not None else 0,
         smoke=int(smoke) if smoke is not None else 0,
         actuators={
-            "light": "UNKNOWN",
-            "fan": "UNKNOWN"
+            "light": get_actuator_state(room_id, "light"),
+            "fan": get_actuator_state(room_id, "fan"),
+            "ac": get_actuator_state(room_id, "ac"),
+            "exhaust_fan": get_actuator_state(room_id, "exhaust_fan"),
+            "ventilation_fan": get_actuator_state(room_id, "ventilation_fan"),
         }
     )
 
@@ -41,16 +43,17 @@ def get_room_by_id(room_id: str) -> Room | None:
 
     return build_room(room_id)
 
+
 def get_room_history(room_id: str, sensor_type: str, minutes: int = 60):
     if room_id not in ROOM_IDS:
         return None
 
     return query_sensor_history(room_id, sensor_type, minutes)
 
+
 def set_actuator(room_id: str, device: str, state: str):
     topic = f"home/{room_id}/actuator/{device}/set"
-
-    publish(topic, state)
+    publish(topic, {"state": state})
 
     return {
         "room": room_id,
