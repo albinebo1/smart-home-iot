@@ -2,6 +2,7 @@ from fastapi import APIRouter, HTTPException, Query
 from typing import List, Literal
 from app.schemas.room import Room
 from app.schemas.history import HistoryPoint
+import time
 from app.services.room_service import (
     get_all_rooms,
     get_room_by_id,
@@ -47,4 +48,5 @@ def control_actuator(
     device: str,
     state: Literal["ON", "OFF"] = Query(...)
 ):
+    print("API_RECEIVED", room_id, device, state, time.time())
     return set_actuator(room_id, device, state)

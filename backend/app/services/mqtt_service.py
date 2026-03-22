@@ -1,6 +1,7 @@
 import json
 import threading
 import paho.mqtt.client as mqtt
+import time
 
 MQTT_HOST = "mqtt"
 MQTT_PORT = 1883
@@ -15,6 +16,7 @@ def _on_connect(client, userdata, flags, rc, properties=None):
 
 def _on_message(client, userdata, msg):
     try:
+        
         payload = json.loads(msg.payload.decode())
         state = payload.get("state", "UNKNOWN")
 
@@ -27,6 +29,7 @@ def _on_message(client, userdata, msg):
 
         ACTUATOR_STATES[room_id][device] = state
         print(f"[MQTT] State update: {room_id} {device} = {state}")
+        print("MQTT_STATE_RECEIVED", msg.topic, msg.payload.decode(), time.time())
 
     except Exception as e:
         print(f"[MQTT] Error processing message: {e}")
@@ -47,6 +50,7 @@ def publish(topic: str, payload: dict):
     client.connect(MQTT_HOST, MQTT_PORT, 60)
     client.loop_start()
 
+    print("MQTT_PUBLISH_SET", topic, payload, time.time())
     result = client.publish(topic, json.dumps(payload))
     result.wait_for_publish()
 

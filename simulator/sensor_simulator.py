@@ -37,7 +37,7 @@ while True:
         pub(room, "motion", motion)
 
     # Kitchen smoke (rare spike)
-    smoke = 1 if random.random() < 0.03 else 0  # 3% chance spike
+    smoke = 1 if random.random() < 0.5 else 0  # 3% chance spike
     pub("kitchen", "smoke", smoke)
 
     time.sleep(INTERVAL_SEC)

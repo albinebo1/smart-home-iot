@@ -37,3 +37,15 @@ export async function setSystemMode(mode) {
 
   return response.json()
 }
+
+export async function getRoomHistory(roomId, sensorType = "temperature", minutes = 60) {
+  const response = await fetch(
+    `${API_BASE_URL}/api/rooms/${roomId}/history?sensor_type=${sensorType}&minutes=${minutes}`
+  )
+
+  if (!response.ok) {
+    throw new Error("Failed to fetch room history")
+  }
+
+  return response.json()
+}

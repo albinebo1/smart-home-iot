@@ -3048,31 +3048,6 @@
         "wires": []
     },
     {
-        "id": "718034838e17f087",
-        "type": "trigger",
-        "z": "eb4fff834c698462",
-        "name": "",
-        "op1": "",
-        "op2": "OFF",
-        "op1type": "nul",
-        "op2type": "str",
-        "duration": "30",
-        "extend": true,
-        "overrideDelay": false,
-        "units": "s",
-        "reset": "",
-        "bytopic": "all",
-        "topic": "topic",
-        "outputs": 1,
-        "x": 590,
-        "y": 300,
-        "wires": [
-            [
-                "53fd734564446304"
-            ]
-        ]
-    },
-    {
         "id": "a54395203fbc4e29",
         "type": "mqtt in",
         "z": "eb4fff834c698462",
@@ -3145,7 +3120,7 @@
         "rh": 0,
         "inputs": 0,
         "x": 170,
-        "y": 440,
+        "y": 520,
         "wires": [
             [
                 "c9a7a41c8c7a2792"
@@ -3167,7 +3142,7 @@
         "expiry": "",
         "broker": "bf00a1908d24bbf2",
         "x": 750,
-        "y": 440,
+        "y": 520,
         "wires": []
     },
     {
@@ -3183,7 +3158,7 @@
         "finalize": "",
         "libs": [],
         "x": 440,
-        "y": 440,
+        "y": 520,
         "wires": [
             [
                 "a36c901faf045992"
@@ -3194,7 +3169,7 @@
         "id": "ea3c475f44d580ed",
         "type": "function",
         "z": "eb4fff834c698462",
-        "name": "function 11",
+        "name": "functionFirst",
         "func": "const mode = global.get(\"mode\") || \"Manual\";\nif (mode !== \"Static\") return null;\n\nconst motion = Number(msg.payload.value);\nif (Number.isNaN(motion)) return null;\n\nmsg.motion = motion;\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
@@ -3206,7 +3181,8 @@
         "y": 300,
         "wires": [
             [
-                "718034838e17f087"
+                "09d6331806ff424a",
+                "90b19c4c1aae0924"
             ]
         ]
     },
@@ -3245,7 +3221,7 @@
         "correl": "",
         "expiry": "",
         "broker": "bf00a1908d24bbf2",
-        "x": 970,
+        "x": 1070,
         "y": 300,
         "wires": []
     },
@@ -3262,7 +3238,7 @@
         "finalize": "",
         "libs": [],
         "x": 450,
-        "y": 560,
+        "y": 640,
         "wires": [
             [
                 "2e014a42f24bf851"
@@ -3283,7 +3259,7 @@
         "rh": 0,
         "inputs": 0,
         "x": 160,
-        "y": 560,
+        "y": 640,
         "wires": [
             [
                 "9c1eedcb34dcce26"
@@ -3305,27 +3281,155 @@
         "expiry": "",
         "broker": "bf00a1908d24bbf2",
         "x": 670,
-        "y": 560,
+        "y": 640,
         "wires": []
     },
     {
-        "id": "53fd734564446304",
+        "id": "09d6331806ff424a",
+        "type": "switch",
+        "z": "eb4fff834c698462",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "1",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "0",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 610,
+        "y": 300,
+        "wires": [
+            [
+                "b4092a2b746e83a4"
+            ],
+            [
+                "718034838e17f087"
+            ]
+        ]
+    },
+    {
+        "id": "b4092a2b746e83a4",
         "type": "function",
         "z": "eb4fff834c698462",
-        "name": "function 21",
-        "func": "msg.topic = \"home/hallway/actuator/light/set\";\n\nif (msg.payload === 1) {\n    msg.payload = {\n        state: \"ON\",\n        reason: \"Static motion detected\"\n    };\n    return msg;\n}\n\nif (msg.payload === \"OFF\") {\n    msg.payload = {\n        state: \"OFF\",\n        reason: \"Static no motion 30s\"\n    };\n    return msg;\n}\n\nreturn null;",
+        "name": "functionON",
+        "func": "msg.topic = \"home/hallway/actuator/light/set\";\nmsg.payload = { state: \"ON\", reason: \"Static motion detected\" };\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 790,
-        "y": 300,
+        "x": 890,
+        "y": 260,
         "wires": [
             [
-                "d3e1182daf0b75a4"
+                "d3e1182daf0b75a4",
+                "09a7b6438d8ed09b"
             ]
         ]
+    },
+    {
+        "id": "718034838e17f087",
+        "type": "trigger",
+        "z": "eb4fff834c698462",
+        "name": "",
+        "op1": "",
+        "op2": "OFF",
+        "op1type": "nul",
+        "op2type": "str",
+        "duration": "30",
+        "extend": true,
+        "overrideDelay": false,
+        "units": "s",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 750,
+        "y": 380,
+        "wires": [
+            [
+                "53fd734564446304"
+            ]
+        ]
+    },
+    {
+        "id": "53fd734564446304",
+        "type": "function",
+        "z": "eb4fff834c698462",
+        "name": "functionOFF",
+        "func": "msg.topic = \"home/hallway/actuator/light/set\";\nmsg.payload = { state: \"OFF\", reason: \"Static no motion 30s\" };\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 930,
+        "y": 380,
+        "wires": [
+            [
+                "d3e1182daf0b75a4",
+                "b5394cef32f709e0"
+            ]
+        ]
+    },
+    {
+        "id": "90b19c4c1aae0924",
+        "type": "debug",
+        "z": "eb4fff834c698462",
+        "name": "debug 9",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 460,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "09a7b6438d8ed09b",
+        "type": "debug",
+        "z": "eb4fff834c698462",
+        "name": "debug 10",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1040.8125,
+        "y": 191.81251525878906,
+        "wires": []
+    },
+    {
+        "id": "b5394cef32f709e0",
+        "type": "debug",
+        "z": "eb4fff834c698462",
+        "name": "debug 11",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1040,
+        "y": 440,
+        "wires": []
     }
 ]
